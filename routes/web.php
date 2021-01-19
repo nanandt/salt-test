@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home','HomeController@index')->name('home');
+Route::get('/prepaid-balance','PrepaidBalanceController@index')->name('prepaid-index');
+Route::post('store', 'PrepaidBalanceController@store');
+
+Route::get('/product-page','ProductController@index')->name('product');
+
+
+
+
+// Route::middleware('auth', 'member')
+//         ->namespace('Member')
+//         ->group(function(){
+//             Route::resource('prepaid-balance', PrepaidBalanceController::class);
+//         });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
