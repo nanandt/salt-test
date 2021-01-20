@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home','HomeController@index')->name('home');
+Route::get('/','HomeController@index')->name('home');
 Route::get('/prepaid-balance','PrepaidBalanceController@index')->name('prepaid-index');
 Route::post('store', 'PrepaidBalanceController@store');
 
 Route::get('/product-page','ProductController@index')->name('product');
+Route::post('store/product', 'ProductController@store');
 
 
 

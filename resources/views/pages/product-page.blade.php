@@ -20,7 +20,7 @@
                 <div class="card">
                     <div class="card-header">Product Balance</div>
                     <div class="card-body">
-                        <form action="/store/" method="post">
+                        <form action="/store/product/" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="product">Product</label>

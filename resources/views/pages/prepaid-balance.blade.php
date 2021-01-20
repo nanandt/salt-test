@@ -8,7 +8,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item {{ request()->is('prepaid-balance') ? ' active' : '' }}"><a href="/prepaid-balance">Prepaid Balance</a></li>
-            <li class="breadcrumb-item {{ request()->is('product-page') ? ' active' : '' }}"><a href="/product-page">Prepaid Balance</a></li>
+            <li class="breadcrumb-item {{ request()->is('product-page') ? ' active' : '' }}"><a href="/product-page">Product Page</a></li>
         </ol>
     </nav>
         <div class="row">
@@ -19,7 +19,7 @@
                         <form action="/store/" method="post">
                             @csrf
                             <div class="form-group">
-                                <input type="text" name="mobile_number" id="mobile_number" placeholder="Mobile Number">
+                                <input type="number" name="mobile_number" id="mobile_number" placeholder="Mobile Number">
                                 @error('mobile_number')
                                     <div class="invalid-feedback">
                                         {{ $message }}
